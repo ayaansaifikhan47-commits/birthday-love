@@ -19,9 +19,13 @@ function showPage(pageNum) {
     // Initialize dots on page 2 and 3
     if (pageNum === 2) {
         initializePhotoDots();
+        currentPhotoSlide = 0;
+        updatePhotoCarousel();
     }
     if (pageNum === 3) {
         initializeMessageDots();
+        currentMessageSlide = 0;
+        updateMessageCarousel();
     }
 }
 
@@ -41,8 +45,6 @@ function restartPage() {
     showPage(1);
     currentPhotoSlide = 0;
     currentMessageSlide = 0;
-    updatePhotoCarousel();
-    updateMessageCarousel();
 }
 
 // Photo Carousel Functions
@@ -62,14 +64,16 @@ function updatePhotoCarousel() {
     carousel.style.transform = `translateX(${offset}%)`;
     
     // Update dots
-    const dots = document.querySelectorAll('.dot');
+    const dots = document.querySelectorAll('.carousel-dots .dot');
     dots.forEach((dot, index) => {
         dot.classList.toggle('active', index === currentPhotoSlide);
     });
 }
 
 function initializePhotoDots() {
-    const dotsContainer = document.getElementById('dots');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    if (!dotsContainer) return;
+    
     dotsContainer.innerHTML = '';
     for (let i = 0; i < 3; i++) {
         const dot = document.createElement('div');
@@ -107,7 +111,9 @@ function updateMessageCarousel() {
 }
 
 function initializeMessageDots() {
-    const dotsContainer = document.getElementById('messageDots');
+    const dotsContainer = document.querySelector('.message-dots');
+    if (!dotsContainer) return;
+    
     dotsContainer.innerHTML = '';
     for (let i = 0; i < 6; i++) {
         const dot = document.createElement('div');

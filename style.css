@@ -254,13 +254,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    overflow: hidden;
 }
 
 .messages-slides {
     display: flex;
     transition: transform 0.5s ease-out;
     width: 100%;
-    justify-content: center;
 }
 
 .message-slide {
@@ -268,7 +269,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 0 20px;
 }
 
 .message-card {
@@ -278,7 +279,8 @@ body {
     border-radius: 20px;
     text-align: center;
     box-shadow: 0 10px 30px rgba(255, 105, 180, 0.3);
-    max-width: 400px;
+    max-width: 350px;
+    width: 100%;
     animation: slideIn 0.6s ease-out;
 }
 
@@ -309,6 +311,7 @@ body {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    z-index: 20;
 }
 
 .carousel-btn.msg-prev {
@@ -324,6 +327,7 @@ body {
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 /* Page 4: Cake */
@@ -342,33 +346,33 @@ body {
 
 .cake {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
 }
 
 /* Candles */
 .candle {
     position: absolute;
-    width: 8px;
-    height: 50px;
+    width: 6px;
+    height: 45px;
     background: #FFD700;
-    bottom: 160px;
+    bottom: 165px;
     left: 50%;
     transform: translateX(-50%);
-    border-radius: 4px;
+    border-radius: 3px;
 }
 
 .candle::after {
     content: '';
     position: absolute;
-    top: -12px;
+    top: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 8px;
-    height: 15px;
+    width: 6px;
+    height: 12px;
     background: linear-gradient(to top, #FF6B6B, #FFB6D9);
     border-radius: 50%;
-    box-shadow: 0 0 12px rgba(255, 107, 107, 0.8);
+    box-shadow: 0 0 10px rgba(255, 107, 107, 0.8);
     animation: flicker 0.4s infinite;
 }
 
@@ -400,49 +404,49 @@ body {
     }
 }
 
-/* Cake Layers */
+/* Cake Body - Better Design */
 .cake-frosting {
     position: absolute;
-    top: 40px;
-    left: 0;
-    width: 100%;
-    height: 35px;
+    top: 50px;
+    left: 30px;
+    width: 190px;
+    height: 40px;
     background: linear-gradient(to bottom, #FFB6D9, #FF69B4);
-    border-radius: 50% 50% 0 0;
-    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 50% 50% 20% 20%;
+    box-shadow: inset 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .cake-layer-1 {
     position: absolute;
-    top: 75px;
+    top: 90px;
     left: 20px;
-    width: 160px;
-    height: 40px;
+    width: 210px;
+    height: 50px;
     background: linear-gradient(to bottom, #FFC0E0, #FFB6D9);
-    border-radius: 5px;
-    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    box-shadow: inset 0 -2px 8px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cake-layer-2 {
     position: absolute;
-    top: 115px;
+    top: 140px;
     left: 40px;
-    width: 120px;
-    height: 35px;
+    width: 170px;
+    height: 45px;
     background: linear-gradient(to bottom, #FF69B4, #FF1493);
-    border-radius: 5px;
-    box-shadow: inset 0 -2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    box-shadow: inset 0 -2px 8px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 
 .cake-base {
     position: absolute;
-    top: 150px;
-    left: 30px;
-    width: 140px;
-    height: 50px;
-    background: linear-gradient(135deg, #FFB6D9 0%, #FFC0E0 100%);
-    border-radius: 0 0 30px 30px;
-    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+    top: 185px;
+    left: 35px;
+    width: 180px;
+    height: 60px;
+    background: linear-gradient(135deg, #FFB6D9 0%, #FFC0E0 50%, #FF69B4 100%);
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 8px 15px rgba(255, 105, 180, 0.3), inset 0 -2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Page 5: Final Wishes */
@@ -463,7 +467,7 @@ body {
 }
 
 .background-upload::before {
-    content: '🖼️';
+    content: '\1F5BC\FE0F';
     display: inline-block;
     padding: 10px 15px;
     background: linear-gradient(135deg, #FF69B4, #FFB6D9);
@@ -675,8 +679,8 @@ body {
     }
 
     .cake {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
     }
 
     .background-upload {
