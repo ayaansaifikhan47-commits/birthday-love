@@ -14,80 +14,111 @@
                 <div class="teddy-bear">🧸</div>
                 <h1 class="title">Happy Birthday!</h1>
                 <p class="subtitle">To someone very special...</p>
-                <button class="btn" onclick="nextPage()">Start 🎊</button>
+                <button class="btn" onclick="nextPage()">Start 🎉</button>
             </div>
         </div>
 
-        <!-- Page 2: Photos -->
+        <!-- Page 2: Photos with Captions (Carousel) -->
         <div class="page page-2">
             <div class="page-header">
                 <h2>📸 Photo Gallery</h2>
                 <p class="page-subtitle">Your beautiful moments</p>
             </div>
-            <div class="photo-gallery" id="photoGallery">
-                <div class="photo-placeholder">
-                    <input type="file" id="photoInput1" accept="image/*" onchange="displayPhoto(this, 1)">
-                    <label for="photoInput1">📷 Add Photo 1</label>
+            
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-slide">
+                        <div class="slide-content">
+                            <div class="photo-box">
+                                <input type="file" id="photoInput1" accept="image/*" onchange="displayPhoto(this, 1)">
+                                <div class="photo-display" id="photo1">📸</div>
+                            </div>
+                            <textarea class="photo-caption" id="caption1" placeholder="Write something special about this moment..." maxlength="100"></textarea>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-content">
+                            <div class="photo-box">
+                                <input type="file" id="photoInput2" accept="image/*" onchange="displayPhoto(this, 2)">
+                                <div class="photo-display" id="photo2">📸</div>
+                            </div>
+                            <textarea class="photo-caption" id="caption2" placeholder="Write something special about this moment..." maxlength="100"></textarea>
+                        </div>
+                    </div>
+                    <div class="carousel-slide">
+                        <div class="slide-content">
+                            <div class="photo-box">
+                                <input type="file" id="photoInput3" accept="image/*" onchange="displayPhoto(this, 3)">
+                                <div class="photo-display" id="photo3">📸</div>
+                            </div>
+                            <textarea class="photo-caption" id="caption3" placeholder="Write something special about this moment..." maxlength="100"></textarea>
+                        </div>
+                    </div>
                 </div>
-                <div class="photo-placeholder">
-                    <input type="file" id="photoInput2" accept="image/*" onchange="displayPhoto(this, 2)">
-                    <label for="photoInput2">📷 Add Photo 2</label>
-                </div>
-                <div class="photo-placeholder">
-                    <input type="file" id="photoInput3" accept="image/*" onchange="displayPhoto(this, 3)">
-                    <label for="photoInput3">📷 Add Photo 3</label>
-                </div>
-                <div class="photo-placeholder">
-                    <input type="file" id="photoInput4" accept="image/*" onchange="displayPhoto(this, 4)">
-                    <label for="photoInput4">📷 Add Photo 4</label>
-                </div>
-                <div class="photo-placeholder">
-                    <input type="file" id="photoInput5" accept="image/*" onchange="displayPhoto(this, 5)">
-                    <label for="photoInput5">📷 Add Photo 5</label>
-                </div>
-                <div class="photo-placeholder">
-                    <input type="file" id="photoInput6" accept="image/*" onchange="displayPhoto(this, 6)">
-                    <label for="photoInput6">📷 Add Photo 6</label>
-                </div>
+                
+                <button class="carousel-btn prev" onclick="prevSlide()">❮</button>
+                <button class="carousel-btn next" onclick="nextSlide()">❯</button>
+                <div class="carousel-dots" id="dots"></div>
             </div>
+            
             <div class="navigation">
                 <button class="btn" onclick="prevPage()">← Back</button>
                 <button class="btn" onclick="nextPage()">Next →</button>
             </div>
         </div>
 
-        <!-- Page 3: Messages -->
+        <!-- Page 3: Messages (Carousel) -->
         <div class="page page-3">
             <div class="page-header">
                 <h2>💌 Love Messages</h2>
-                <p class="page-subtitle">Special wishes from the heart</p>
+                <p class="page-subtitle">Slide to see more wishes</p>
             </div>
-            <div class="messages-container">
-                <div class="message-card">
-                    <div class="message-emoji">💕</div>
-                    <p class="message-text">"You bring so much joy and light into my life. Thank you for being you!"</p>
+            
+            <div class="messages-carousel">
+                <div class="messages-slides">
+                    <div class="message-slide">
+                        <div class="message-card">
+                            <div class="message-emoji">💕</div>
+                            <p class="message-text">"You bring so much joy and light into my life. Thank you for being you!"</p>
+                        </div>
+                    </div>
+                    <div class="message-slide">
+                        <div class="message-card">
+                            <div class="message-emoji">✨</div>
+                            <p class="message-text">"Every moment with you is a blessing. Happy Birthday to someone truly special!"</p>
+                        </div>
+                    </div>
+                    <div class="message-slide">
+                        <div class="message-card">
+                            <div class="message-emoji">🌟</div>
+                            <p class="message-text">"You deserve all the happiness in the world. May your day be as wonderful as you are!"</p>
+                        </div>
+                    </div>
+                    <div class="message-slide">
+                        <div class="message-card">
+                            <div class="message-emoji">🎁</div>
+                            <p class="message-text">"Here's to another year of laughter, love, and amazing memories together!"</p>
+                        </div>
+                    </div>
+                    <div class="message-slide">
+                        <div class="message-card">
+                            <div class="message-emoji">🌸</div>
+                            <p class="message-text">"You are my sunshine on cloudy days. Happy Birthday, my dear!"</p>
+                        </div>
+                    </div>
+                    <div class="message-slide">
+                        <div class="message-card">
+                            <div class="message-emoji">💖</div>
+                            <p class="message-text">"Thank you for making life beautiful. Wishing you the happiest of birthdays!"</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="message-card">
-                    <div class="message-emoji">✨</div>
-                    <p class="message-text">"Every moment with you is a blessing. Happy Birthday to someone truly special!"</p>
-                </div>
-                <div class="message-card">
-                    <div class="message-emoji">🌟</div>
-                    <p class="message-text">"You deserve all the happiness in the world. May your day be as wonderful as you are!"</p>
-                </div>
-                <div class="message-card">
-                    <div class="message-emoji">🎁</div>
-                    <p class="message-text">"Here's to another year of laughter, love, and amazing memories together!"</p>
-                </div>
-                <div class="message-card">
-                    <div class="message-emoji">🌺</div>
-                    <p class="message-text">"You are my sunshine on cloudy days. Happy Birthday, my dear!"</p>
-                </div>
-                <div class="message-card">
-                    <div class="message-emoji">💖</div>
-                    <p class="message-text">"Thank you for making life beautiful. Wishing you the happiest of birthdays!"</p>
-                </div>
+                
+                <button class="carousel-btn msg-prev" onclick="prevMessageSlide()">❮</button>
+                <button class="carousel-btn msg-next" onclick="nextMessageSlide()">❯</button>
+                <div class="message-dots" id="messageDots"></div>
             </div>
+            
             <div class="navigation">
                 <button class="btn" onclick="prevPage()">← Back</button>
                 <button class="btn" onclick="nextPage()">Next →</button>
@@ -102,12 +133,16 @@
             </div>
             <div class="cake-container">
                 <div class="cake">
+                    <!-- Candles -->
                     <div class="candle" id="candle1"></div>
                     <div class="candle" id="candle2"></div>
                     <div class="candle" id="candle3"></div>
-                    <div class="cake-top"></div>
-                    <div class="cake-middle"></div>
-                    <div class="cake-bottom"></div>
+                    
+                    <!-- Cake layers -->
+                    <div class="cake-frosting"></div>
+                    <div class="cake-layer-1"></div>
+                    <div class="cake-layer-2"></div>
+                    <div class="cake-base"></div>
                 </div>
                 <button class="btn" onclick="blowCandles()">🌬️ Blow Candles</button>
                 <div id="confetti-container"></div>
@@ -118,24 +153,25 @@
             </div>
         </div>
 
-        <!-- Page 5: Final Wishes -->
+        <!-- Page 5: Final Wishes with Background -->
         <div class="page page-5">
+            <div class="background-upload">
+                <input type="file" id="bgInput" accept="image/*" onchange="setBgImage(this)">
+            </div>
+            
             <div class="final-wishes">
                 <div class="wish-box">
                     <h2 class="wish-title">🎉 One Last Thing...</h2>
-                    <p class="wish-message">I wish you a year filled with:</p>
-                    <div class="wishes-list">
-                        <div class="wish-item">✨ Dreams coming true</div>
-                        <div class="wish-item">💪 Strength and courage</div>
-                        <div class="wish-item">❤️ Love and compassion</div>
-                        <div class="wish-item">😊 Laughter and joy</div>
-                        <div class="wish-item">🌟 Success and happiness</div>
-                        <div class="wish-item">🌍 Adventures and growth</div>
+                    
+                    <div class="custom-wishes">
+                        <textarea class="wish-textarea" id="wish1" placeholder="Write your first beautiful wish here... (e.g., I wish you endless smiles and laughter)"></textarea>
+                        <textarea class="wish-textarea" id="wish2" placeholder="Write your second wish... (e.g., May all your dreams come true)"></textarea>
+                        <textarea class="wish-textarea" id="wish3" placeholder="Write your third wish... (e.g., Have the most amazing day)"></textarea>
                     </div>
-                    <p class="final-message">Thank you for being the amazing person you are!</p>
+                    
+                    <p class="final-message">You mean the world to me! 🌍</p>
                     <p class="signature">With all my love 💕</p>
                 </div>
-                <div class="confetti-animation"></div>
             </div>
             <div class="navigation">
                 <button class="btn" onclick="prevPage()">← Back</button>
